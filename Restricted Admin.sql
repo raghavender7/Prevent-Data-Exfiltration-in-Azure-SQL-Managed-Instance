@@ -1,4 +1,11 @@
+USE [master]
+GO
 
+-- Create a server role for Restricted Admin
+CREATE SERVER ROLE [RestrictedAdmin]
+GO
+
+-- Grant the following least privilege permissions to the server role
 
 GRANT CONNECT ANY DATABASE TO [RestrictedAdmin]
 GRANT SELECT ALL USER SECURABLES TO [RestrictedAdmin]
@@ -22,3 +29,7 @@ DENY ALTER SETTINGS TO [RestrictedAdmin]
 DENY IMPERSONATE ANY LOGIN TO [RestrictedAdmin]
 DENY ADMINISTER BULK OPERATIONS TO [RestrictedAdmin]
 --GRANT VIEW DATABASE STATE TO [RestrictedAdmin]
+
+-- Finally, Add your DBAs and other users(preferably AD groups) to this server role
+ALTER SERVER ROLE [RestrictedAdmin] ADD MEMBER [service.sql]
+GO

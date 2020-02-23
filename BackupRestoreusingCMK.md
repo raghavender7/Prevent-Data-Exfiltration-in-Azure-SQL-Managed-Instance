@@ -1,4 +1,4 @@
-Here are instructions on how to manually backup and restore a sql database from one SQL Managed Instance to the other instane within the same Azure AD tenant. These instructions have been put together by my peer Karthik Yella https://github.com/karthikyella/
+Here are instructions on how to manually backup and restore a sql database from one SQL Managed Instance to the other instance within the same Azure AD tenant. These instructions have been put together by my peer [Karthik Yella](https://github.com/karthikyella/
 
 Once a database is encrypted with TDE using a key from Key Vault, any generated backups are also encrypted with the same **TDE Protector**.
 
@@ -24,15 +24,25 @@ Select the same TDE Protector as used by the vyelsqlmi2  ( source instance)
 ![image](https://user-images.githubusercontent.com/22504173/75118499-c458a800-5648-11ea-9387-3f281680c4c2.png)
 
 Make sure that the setting - **Make the selected key the default TDE protector** is disabled. That way the key can be used only for restore on the target instance, without being used as a TDE protector after the restore.
+
 ![image](https://user-images.githubusercontent.com/22504173/75118568-1dc0d700-5649-11ea-8354-8f3f0a0f8c81.png)
 
 Click on Save to ensure that the settings are applied. Doing this in the Portal will create an AppID for the SQL Database Managed instance server, which is used to assign the SQL Database managed instance server permissions to access the key vault.
+
 ![image](https://user-images.githubusercontent.com/22504173/75118502-ccb0e300-5648-11ea-9204-70db6316e962.png)
 
 Checking the access policies for the Key vault, you can see that  both the managed instance servers has permissions to access the key vault.
+
 ![image](https://user-images.githubusercontent.com/22504173/75118504-d0446a00-5648-11ea-865a-999c423fa85f.png)
 
-In this way, we can guarantee that any Azure SQL Instance has access to the key vault to access the TDE protector even before we try to restore the database
+In this way, we can **guarantee** that any Azure SQL Instance has access to the key vault to access the TDE protector even before we try to restore the database to prevent any Data exfiltration scenarios.
 
+Finally, Backup the database using the COPY_ONLY flag on the Source SQL instance.
 
+![image](https://user-images.githubusercontent.com/22504173/75118510-d76b7800-5648-11ea-9b10-ee5e4cabc430.png)
 
+Restore the database on the target SQL instance
+
+![image](https://user-images.githubusercontent.com/22504173/75118511-dd615900-5648-11ea-9f00-428d2cbfdb2d.png)
+
+That way easy!

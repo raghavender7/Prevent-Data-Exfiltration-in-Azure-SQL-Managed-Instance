@@ -11,8 +11,9 @@ Here are different different Exfiltration scenarios.
 Azure SQL Managed instances supports taking backups to a URL with the COPY_ONLY flag. This means that a malicious user can take a backup of the database to a personal storage account within the same Azure region. There are couple of ways to make sure that we prevent this from happening.
 
 ## Preventive Actions
-* Restricted Admin Access
-  Always follow the principle of least privilege to make sure that you are always granting the minimum permissions
+* Restricted Admin Access:
+   Always follow the principle of least privilege to make sure that you are always granting the minimum permissions to your DBAs and other privileged users. 
+   [GitHub](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/Restricted%20Admin.sql)
 * Use Transparent Data Encryption (TDE)
 
 ## Controls

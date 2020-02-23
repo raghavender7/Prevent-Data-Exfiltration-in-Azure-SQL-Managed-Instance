@@ -28,9 +28,11 @@ Make sure that the setting - **Make the selected key the default TDE protector**
 ![image](https://user-images.githubusercontent.com/22504173/75118568-1dc0d700-5649-11ea-8354-8f3f0a0f8c81.png)
 
 Click on Save to ensure that the settings are applied. Doing this in the Portal will create an **AppID for the SQL Database Managed instance target server**, which is used to assign the SQL Database managed instance server permissions to access the key vault.
+
 ![image](https://user-images.githubusercontent.com/22504173/75118502-ccb0e300-5648-11ea-9204-70db6316e962.png)
 
 Checking the access policies for the Key vault, you can see that  **both the managed instance servers** has permissions to access the key vault.
+
 ![image](https://user-images.githubusercontent.com/22504173/75118504-d0446a00-5648-11ea-865a-999c423fa85f.png)
 
 In this way, we can **guarantee** that any Azure SQL Instance has access to the key vault to access the TDE protector even before we try to restore the database to prevent any Data exfiltration scenarios.

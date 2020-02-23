@@ -13,7 +13,7 @@ Azure SQL Managed instances supports taking backups to a URL with the COPY_ONLY 
 ## Preventive Actions
 * Restricted Admin Access:
    Always follow the principle of least privilege to make sure that you are always granting the minimum permissions to your DBAs and other privileged users. 
-   [GitHub](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/Restricted%20Admin.sql)
+   [T-SQL Script to create Restricted Admin role](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/Restricted%20Admin.sql)
 * Use Transparent Data Encryption (TDE)
 
 ## Controls

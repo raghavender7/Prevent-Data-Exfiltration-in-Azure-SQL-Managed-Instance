@@ -13,5 +13,7 @@ vyelsqlmi2 has been encrypted with the TDE protector- **MyTDEKey2** from the key
 
 For a successful restore of the backup from vyelsqlmi2 on to vyelsqlmi3, the target instance needs to have access to the TDE protector from the source instance. 
 Go to Transparent data encryption under security and click on Yes for the setting  -“ Use your own key”
+
 ![image](https://user-images.githubusercontent.com/22504173/75118495-bc006d00-5648-11ea-8d0b-86eab11bf9e9.png)
+
 ![image](https://user-images.githubusercontent.com/22504173/75118496-c02c8a80-5648-11ea-85f6-a3f7cd4a87ef.png)

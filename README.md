@@ -22,7 +22,7 @@ Transparent data encryption (TDE) helps protect Azure SQL Managed Instance again
 
 COPY_ONLY backups are not allowed when using Service Managed Keys(Ofcourse because Microsoft manages the Key). They can only work with Customer Managed keys which means that in order for someone to restore the backup, the target SQL instance needs to have access to the original key in Azure key vault. Azure key vault has an access policy which is managed by Azure AD and hence it acts as security boundary by making sure that any  Azure SQL instance which is not part of the Access policy is denied access and hence that backup will be rendered useless.
 
-Here are instructions on how to backup and restore databases in Azure SQL Database Managed Instance using Customer Managed Keys.
+Here are instructions on [how to backup and restore databases in Azure SQL Database Managed Instance using Customer Managed Keys](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/BackupRestoreusingCMK.md)
  
 ## Controls
 

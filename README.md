@@ -5,7 +5,7 @@ As part of your Network Infrastructure, you might have tightened your security t
 
 Here are different different Exfiltration scenarios.
 
-
+https://user-images.githubusercontent.com/22504173/75120368-4b158100-5659-11ea-8a34-8a05440158e1.png
 
 
 # Restricted Admin Access

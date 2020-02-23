@@ -1,4 +1,4 @@
-Here are instructions on how to manually backup and restore a sql database from one SQL Managed Instance to the other instance within the same Azure AD tenant. These instructions have been put together by my peer [Karthik Yella](https://github.com/karthikyella/
+Here are instructions on how to manually backup and restore a sql database from one SQL Managed Instance to the other instance within the same Azure AD tenant. These instructions have been put together by my peer [Karthik Yella](https://github.com/karthikyella/)
 
 Once a database is encrypted with TDE using a key from Key Vault, any generated backups are also encrypted with the same **TDE Protector**.
 

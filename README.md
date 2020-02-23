@@ -17,10 +17,10 @@ By default, Azure SQL Database Managed Instance has automatic backups that are s
    
    For your Power users who need sysadmin access, here are some guidelienes
    
-* Use Transparent Data Encryption (TDE)
+* Use Transparent Data Encryption (TDE) :
 Transparent data encryption (TDE) helps protect Azure SQL Managed Instance against the threat of malicious offline activity by encrypting data at rest. It performs real-time encryption and decryption of the database, associated backups, and transaction log files at rest without requiring changes to the application. By default, TDE is enabled for all databases. TDE is enabled by default using Service Managed Keys(where Microsoft manages the Key) and Customer Managed Keys (where you as a customer point to a key in Azure Key vault). 
-
-
+COPY_ONLY backups are not allowed when using Service Managed Keys(Ofcourse because Microsoft manages the Key). They can only work with Customer Managed keys which means that in order for someone to restore the backup, that SQL instance needs to have access to the original key in Azure key vault. Azure key vault has an access policy which is managed by Azure AD and hence it acts as security boundary by making sure that any SQL instance which is not part of the Access policy is denied access and hence that backup will be rendered useless.
+Here are instructions on how to backup and restore databases in Azure SQL Database Managed Instance within an Azure AD tenant
  
 
 ## Controls

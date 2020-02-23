@@ -8,13 +8,20 @@ Here are different different Exfiltration scenarios.
 
 
 # Backups to Unauthorized Locations
-Azure SQL Managed instances supports taking backups to a URL with the COPY_ONLY flag. This means that a malicious user can take a backup of the database to a personal storage account within the same Azure region. There are couple of ways to make sure that we prevent this from happening.
+By default, Azure SQL Database Managed Instance has automatic backups that are stored on Azure storage, fully encrypted, keeping you compliant, and providing most of the functionalities that you would need. Additionally, Managed Instance also enables you to take your own COPY_ONLY backups where you get an option to take backups to a URL with the COPY_ONLY flag. This means that a malicious user can take a backup of the database to his\her personal storage account. There are couple of ways to make sure that we prevent this from happening.
 
 ## Preventive Actions
 * Restricted Admin Access:
-   Always follow the principle of least privilege to make sure that you are always granting the minimum permissions to your DBAs and other privileged users. 
+  Always follow the principle of least privilege to make sure that you are always granting the minimum permissions to your DBAs and other privileged users on your Azure SQL Managed Instance.
    [T-SQL Script to create Restricted Admin role](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/Restricted%20Admin.sql)
+   
+   For your Power users who need sysadmin access, here are some guidelienes
+   
 * Use Transparent Data Encryption (TDE)
+Transparent data encryption (TDE) helps protect Azure SQL Managed Instance against the threat of malicious offline activity by encrypting data at rest. It performs real-time encryption and decryption of the database, associated backups, and transaction log files at rest without requiring changes to the application. By default, TDE is enabled for all databases. TDE is enabled by default using Service Managed Keys(where Microsoft manages the Key) and Customer Managed Keys (where you as a customer point to a key in Azure Key vault). 
+
+
+ 
 
 ## Controls
 

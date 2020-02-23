@@ -8,14 +8,14 @@ To restore a backup encrypted with a TDE Protector from Key Vault, we need to ma
 You need to add that key on the target instance, but don't need to check the checkbox at the bottom of the blade -'Make the selected key the default protector’. That way, key can be used for restoring on the target instance, without being used as a default protector.
 
 # Step by Step Instructions
-In the below example, I am trying to restore a database backup from **vyelsqlmi2** to **vyelsqlmi3**. 
+In the below example, We are trying to restore a database backup from **vyelsqlmi2** to **vyelsqlmi3**. 
 
 vyelsqlmi2 has been encrypted with the TDE protector- **MyTDEKey2** from the keyvault - **vyelkeyvault**. So, all the backups taken on the instance will be encrypted with this TDE protector.
 ![image](https://user-images.githubusercontent.com/22504173/75118493-b7d44f80-5648-11ea-9cd2-a637e611b431.png)
 
-For a successful restore of the backup from vyelsqlmi2 on to vyelsqlmi3, the target instance needs to have access to the TDE protector from the source instance. 
+For a successful restore of the backup from vyelsqlmi2 on to vyelsqlmi3, the target instance needs to have *access* to the TDE protector from the source instance. 
 
-Go to Transparent data encryption under security and click on Yes for the setting  -“ Use your own key”. Point to the Key Vault which is used by the source instance
+Go to Transparent data encryption under security and click on Yes for the setting  -**Use your own key**. Point to the Key Vault which is used by the source instance
 
 ![image](https://user-images.githubusercontent.com/22504173/75118495-bc006d00-5648-11ea-8d0b-86eab11bf9e9.png)
 
@@ -29,11 +29,11 @@ Make sure that the setting - **Make the selected key the default TDE protector**
 
 ![image](https://user-images.githubusercontent.com/22504173/75118568-1dc0d700-5649-11ea-8354-8f3f0a0f8c81.png)
 
-Click on Save to ensure that the settings are applied. Doing this in the Portal will create an AppID for the SQL Database Managed instance server, which is used to assign the SQL Database managed instance server permissions to access the key vault.
+Click on Save to ensure that the settings are applied. Doing this in the Portal will create an **AppID for the SQL Database Managed instance target server**, which is used to assign the SQL Database managed instance server permissions to access the key vault.
 
 ![image](https://user-images.githubusercontent.com/22504173/75118502-ccb0e300-5648-11ea-9204-70db6316e962.png)
 
-Checking the access policies for the Key vault, you can see that  both the managed instance servers has permissions to access the key vault.
+Checking the access policies for the Key vault, you can see that  **both the managed instance servers** has permissions to access the key vault.
 
 ![image](https://user-images.githubusercontent.com/22504173/75118504-d0446a00-5648-11ea-865a-999c423fa85f.png)
 

@@ -38,10 +38,16 @@ All the logs show up in the Log Analytics workspace. Click on the **Logs** optio
 
 ![image](https://user-images.githubusercontent.com/22504173/75151353-8012e980-56d4-11ea-92e7-c7ae748caef2.png)
 
+This query will show all the logs captured by SQL Auditing option which we have enabled on the Azure SQL Managed instance in the earlier steps
 ```KQL
 AzureDiagnostics | where Category == "SQLSecurityAuditEvents" 
 ```
-## Creating Alerts to notify on any suspicious activities
+## Create Alerts to notify on any suspicious activities
+Here are steps to create Alerts based on a Custom log query. You can customize this accordingly to your SLA requirements and create an Action group to notify when certain thresholds are hit
+```KQL
+AzureDiagnostics
+| where Category == "SQLSecurityAuditEvents" and action_name_s =="BACKUP" and statement_s contains "COPY_ONLY" | count
+```
 ![image](https://user-images.githubusercontent.com/22504173/75151572-016a7c00-56d5-11ea-85d4-5780b35ac0c2.png)
 ![image](https://user-images.githubusercontent.com/22504173/75151622-252dc200-56d5-11ea-8368-6c69997bf73a.png)
 

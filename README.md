@@ -28,8 +28,7 @@ Here are instructions on [how to backup and restore databases in Azure SQL Datab
 * **Setting Auditing Alerts:**
 You need to make sure that you have enabled auditing on the Azure SQL Managed Instance to capture all backup and restore activities. Auditing can write to your storage accounts or to Log Analytics workspaces. By writing to Log Analytics workspace, you can create Alerts and notifications to make sure that you get alerted on all the backup and restore activities to\from Unauthorized locations.
 
-Please follow this link to [enable Auditing on Azure SQL Managed Instance and get alerted for suspicious backup activities]
-(https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/SQLMIAuditforBackuprestore.md)
+Please follow this link to [enable Auditing on Azure SQL Managed Instance and get alerted for suspicious backup activities](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/SQLMIAuditforBackuprestore.md)
 
 # Copying Data through Linked Servers
 ## Preventive Actions

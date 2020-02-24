@@ -29,13 +29,11 @@ ALTER SERVER AUDIT BackupRestoreAudit WITH (STATE=ON);
 GO
 ```
 ## Monitoring the Audit logs
-![image](https://user-images.githubusercontent.com/22504173/75151345-7b4e3580-56d4-11ea-9397-227452050151.png)
 
-
+![image](https://user-images.githubusercontent.com/22504173/75151353-8012e980-56d4-11ea-92e7-c7ae748caef2.png)
 
 ```KQL
 AzureDiagnostics | where Category == "SQLSecurityAuditEvents" 
 ```
 ## Creating Alerts to notify on any suspicious activities
 
-![image](https://user-images.githubusercontent.com/22504173/75151353-8012e980-56d4-11ea-92e7-c7ae748caef2.png)

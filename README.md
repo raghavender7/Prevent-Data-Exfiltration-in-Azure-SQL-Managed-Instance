@@ -11,14 +11,14 @@ Here are different different Exfiltration scenarios.
 By default, Azure SQL Database Managed Instance has automatic backups that are stored on Azure storage, fully encrypted, keeping you compliant, and providing most of the functionalities that you would need. Additionally, Managed Instance also enables you to take your own COPY_ONLY backups where you get an option to take backups to a URL with the COPY_ONLY flag. This means that a malicious user can take a backup of the database to his\her personal storage account. There are couple of ways to make sure that we prevent this from happening.
 
 ## Preventive Actions
-* Restricted Admin Access:
+* **Restricted Admin Access:**
   Always follow the principle of least privilege to make sure that you are always granting the minimum permissions to your DBAs and other privileged users on your Azure SQL Managed Instance.
    [T-SQL Script to create Restricted Admin role](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/Restricted%20Admin.sql)
    
    For your Power users who need sysadmin access, here are some guidelienes
    
-* Use Transparent Data Encryption (TDE) :
-Transparent data encryption (TDE) helps protect Azure SQL Managed Instance against the threat of malicious offline activity by encrypting data at rest. It performs real-time encryption and decryption of the database, associated backups, and transaction log files at rest without requiring changes to the application. TDE is either enabled by using Service Managed Keys(where Microsoft manages the Key which is default) or Customer Managed Keys (where you as a customer point to a key in Azure Key vault). 
+* **Use Transparent Data Encryption (TDE):**
+TDE helps protect Azure SQL Managed Instance against the threat of malicious offline activity by encrypting data at rest. It performs real-time encryption and decryption of the database, associated backups, and transaction log files at rest without requiring changes to the application. TDE is either enabled by using Service Managed Keys(where Microsoft manages the Key which is default) or Customer Managed Keys (where you as a customer point to a key in Azure Key vault). 
 
 COPY_ONLY backups are not allowed when using Service Managed Keys(Ofcourse because Microsoft manages the Key). They can only work with Customer Managed keys which means that in order for someone to restore the backup, the target SQL instance needs to have access to the original key(TDE Protector) in Azure key vault. Azure key vault has an access policy which is managed by Azure AD and hence it acts as security boundary by making sure that any Azure SQL instance which is not part of the Access policy is denied access and hence that backup will be rendered useless preventing data exfiltration.
 

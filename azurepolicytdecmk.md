@@ -10,4 +10,4 @@
 * Select the Policy from the Policy definition
 ![image](https://user-images.githubusercontent.com/22504173/75174889-60dd8180-56ff-11ea-9965-ab4bd8f7fa6e.png)
 
-* click on Review and Create
+* Click on Review and Create

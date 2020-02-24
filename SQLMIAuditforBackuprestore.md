@@ -4,17 +4,30 @@ Auditing is a very important part of security configuration on any Database serv
 
 ## Step 1: To enable Diagnostic Logging at Azure SQL Managed Instance level.
 
+
+
+
+## Step 2: To configure Auditing at Azure SQL Managed Instance level 
+
 ```TSQL
 CREATE SERVER AUDIT BackupRestoreAudit TO EXTERNAL_MONITOR;
 GO
 ```
-
-## Step 2: To configure Auditing at Azure SQL Managed Instance level 
-
 ## Step 3: To create the Server Audit specification
 
+```TSQL
+CREATE SERVER AUDIT SPECIFICATION BackupRestoreAuditSpec
+FOR SERVER AUDIT BackupRestoreAudit
+ADD (BACKUP_RESTORE_GROUP),
+ADD (AUDIT_CHANGE_GROUP)
+WITH (STATE=ON);
+```
 ## Step 4: To enable to auditing feature
 
+```TSQL
+ALTER SERVER AUDIT BackupRestoreAudit WITH (STATE=ON);
+GO
+```
 ## Monitoring the Audit logs
 
 ## Creating Alerts to notify on any suspicious activities

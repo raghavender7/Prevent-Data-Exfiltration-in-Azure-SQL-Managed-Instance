@@ -26,7 +26,7 @@ ADD (BACKUP_RESTORE_GROUP),
 ADD (AUDIT_CHANGE_GROUP)
 WITH (STATE=ON);
 ```
-## Step 4: To enable to auditing feature
+## Step 4: To enable the server audit
 
 Enable the server audit created in the earlier step. This is the final step and Auditing has been enabled for your Azure SQL Managed Instance.
 ```TSQL

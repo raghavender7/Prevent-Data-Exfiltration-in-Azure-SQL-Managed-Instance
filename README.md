@@ -38,25 +38,29 @@ Please follow this link to [enable Auditing on Azure SQL Managed Instance and ge
 
 # Copying Data through Linked Servers
 ## Preventive Actions
-* Restricted Admin Access
+* **Restricted Admin Access**
 ## Controls
+* **Setting Auditing Alerts:**
 
 # Outbound Calls through CLR Integration
 ## Preventive Actions
-* Restricted Admin Access
-* Turn off CLR Integration
+* **Restricted Admin Access**
+* **Turn off CLR Integration**
 ## Controls
+* **Setting Auditing Alerts:**
 
 # Sending Data through DBMail
 ## Preventive Actions
-* Restricted Admin Access
+* **Restricted Admin Access**
 ## Controls
+* **Setting Auditing Alerts:**
 
 # Reading Data from Audit Logs
 ## Preventive Actions
-* Locking storage firewall to Managed Instance subnet
-## Controls
+* **Locking storage firewall to Managed Instance subnet**
 
+## Controls
+* **Storage Access controls:**
 
 
 

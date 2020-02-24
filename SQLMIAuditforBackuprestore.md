@@ -30,4 +30,7 @@ GO
 ```
 ## Monitoring the Audit logs
 
+```KQL
+AzureDiagnostics | where Category == "SQLSecurityAuditEvents" 
+```
 ## Creating Alerts to notify on any suspicious activities

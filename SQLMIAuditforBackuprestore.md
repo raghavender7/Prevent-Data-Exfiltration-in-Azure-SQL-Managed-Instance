@@ -1,6 +1,6 @@
 # Configure Server Auditing for Azure SQL Managed Instance to capture Backup and Restore activity
 
-Auditing is a very important part of security configuration on any Database service and it becomes more critical in a cloud environment. Azure SQL Managed Instance Server audit can be written to Azure Storage or Log analytics workspaces. In this setup we will be showcasing Log analytics workspace so that we can use the native functionality to easily alert and notify teams when any suspcious activities happen related to backups and restores to any unauthorized locations.
+Auditing is a very important part of security configuration on any Database service and it becomes more critical in a cloud environment. Azure SQL Managed Instance Server audit can be written to Azure Storage or Log analytics workspaces. In this setup we will be showcasing Log analytics workspace so that we can use the native functionality to easily alert and notify teams when any suspcious activities happen related to backups and restores to any unauthorized locations. Here is the direct link to the T-SQL script to enable auditing on a SQL Managed Instance
 
 ## Step 1: To enable Diagnostic Logging at Azure SQL Managed Instance level.
 

@@ -36,4 +36,6 @@ GO
 AzureDiagnostics | where Category == "SQLSecurityAuditEvents" 
 ```
 ## Creating Alerts to notify on any suspicious activities
+![image](https://user-images.githubusercontent.com/22504173/75151572-016a7c00-56d5-11ea-85d4-5780b35ac0c2.png)
+![image](https://user-images.githubusercontent.com/22504173/75151622-252dc200-56d5-11ea-8368-6c69997bf73a.png)
 

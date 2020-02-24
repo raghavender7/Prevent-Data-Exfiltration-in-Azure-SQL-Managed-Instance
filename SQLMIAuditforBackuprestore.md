@@ -4,8 +4,8 @@ Auditing is a very important part of security configuration on any Database serv
 
 ## Step 1: To enable Diagnostic Logging at Azure SQL Managed Instance level.
 
-
-
+![image](https://user-images.githubusercontent.com/22504173/75150778-1e05b480-56d3-11ea-8b37-f45cf9375c84.png)
+![image](https://user-images.githubusercontent.com/22504173/75150785-22ca6880-56d3-11ea-938c-7d4fbf473790.png)
 
 ## Step 2: To configure Auditing at Azure SQL Managed Instance level 
 
@@ -29,8 +29,13 @@ ALTER SERVER AUDIT BackupRestoreAudit WITH (STATE=ON);
 GO
 ```
 ## Monitoring the Audit logs
+![image](https://user-images.githubusercontent.com/22504173/75151345-7b4e3580-56d4-11ea-9397-227452050151.png)
+
+
 
 ```KQL
 AzureDiagnostics | where Category == "SQLSecurityAuditEvents" 
 ```
 ## Creating Alerts to notify on any suspicious activities
+
+![image](https://user-images.githubusercontent.com/22504173/75151353-8012e980-56d4-11ea-92e7-c7ae748caef2.png)

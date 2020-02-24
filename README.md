@@ -33,7 +33,7 @@ Please follow this link to [enable Auditing on Azure SQL Managed Instance and ge
 * **Azure Policy to enforce TDE:**
 Azure policies enforce different rules and effects over your resources, so those resources stay compliant with your corporate standards and service level agreements. Azure Policy meets this need by evaluating your resources for non-compliance with assigned policies. They have a built-in policy called **"SQL managed instance TDE protector should be encrypted with your own key"**. This policy enforces that you need to encrypt your databases with Customer managed keys located in Azure Key Vault.
 
-Please follow the instructions at this link to enable a policy across your subscription for a Managed Instances. 
+Please follow the instructions at this link to enable [Azure policy across your subscription for Managed Instances](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/azurepolicytdecmk.md)
 
 * **ATP Threat detection for Data Exfiltration:**
 

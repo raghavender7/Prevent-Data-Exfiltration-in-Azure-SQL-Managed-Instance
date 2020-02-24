@@ -30,6 +30,12 @@ You need to make sure that you have enabled auditing on the Azure SQL Managed In
 
 Please follow this link to [enable Auditing on Azure SQL Managed Instance and get alerted for suspicious backup activities](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/SQLMIAuditforBackuprestore.md)
 
+* **Azure Policy to enforce TDE:**
+
+* **ATP Threat detection for Data Exfiltration:**
+
+* **ATP Vulnerability assessments:**
+
 # Copying Data through Linked Servers
 ## Preventive Actions
 * Restricted Admin Access

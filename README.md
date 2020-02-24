@@ -37,38 +37,38 @@ Please follow this link to [enable Auditing on Azure SQL Managed Instance and ge
 * **ATP Vulnerability assessments:**
 
 # Copying Data through Linked Servers
-## Preventive Actions
+### Preventive Actions
 * **Restricted Admin Access:**
   Always follow the principle of least privilege to make sure that you are always granting the minimum permissions to your DBAs and other privileged users on your Azure SQL Managed Instance.
    [T-SQL Script to create Restricted Admin role](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/Restricted%20Admin.sql)
    
-## Controls
+### Controls
 * **Setting Auditing Alerts:**
 
 # Outbound Calls through CLR Integration
-## Preventive Actions
+### Preventive Actions
 * **Restricted Admin Access:**
   Always follow the principle of least privilege to make sure that you are always granting the minimum permissions to your DBAs and other privileged users on your Azure SQL Managed Instance.
    [T-SQL Script to create Restricted Admin role](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/Restricted%20Admin.sql)
    
 * **Turn off CLR Integration**
-## Controls
+### Controls
 * **Setting Auditing Alerts:**
 
 # Sending Data through DBMail
-## Preventive Actions
+### Preventive Actions
 * **Restricted Admin Access:**
   Always follow the principle of least privilege to make sure that you are always granting the minimum permissions to your DBAs and other privileged users on your Azure SQL Managed Instance.
    [T-SQL Script to create Restricted Admin role](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/Restricted%20Admin.sql)
    
-## Controls
+### Controls
 * **Setting Auditing Alerts:**
 
 # Reading Data from Audit Logs
-## Preventive Actions
+### Preventive Actions
 * **Locking storage firewall to Managed Instance subnet**
 
-## Controls
+### Controls
 * **Storage Access controls:**
 
 

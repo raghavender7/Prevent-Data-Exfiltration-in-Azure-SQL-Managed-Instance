@@ -10,7 +10,7 @@ Here are different different Exfiltration scenarios.
 # Backups to Unauthorized Locations
 By default, Azure SQL Database Managed Instance has automatic backups that are stored on Azure storage, fully encrypted, keeping you compliant, and providing most of the functionalities that you would need. Additionally, Managed Instance also enables you to take your own COPY_ONLY backups where you get an option to take backups to a URL with the COPY_ONLY flag. This means that a malicious user can take a backup of the database to his\her personal storage account. There are couple of ways to make sure that we prevent this from happening.
 
-## Preventive Actions
+### Preventive Actions
 * **Restricted Admin Access:**
   Always follow the principle of least privilege to make sure that you are always granting the minimum permissions to your DBAs and other privileged users on your Azure SQL Managed Instance.
    [T-SQL Script to create Restricted Admin role](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/Restricted%20Admin.sql)
@@ -24,7 +24,7 @@ COPY_ONLY backups are not allowed when using Service Managed Keys(Ofcourse becau
 
 Here are instructions on [how to backup and restore databases in Azure SQL Database Managed Instance using Customer Managed Keys](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/BackupRestoreusingCMK.md)
  
-## Controls
+### Controls
 * **Setting Auditing Alerts:**
 You need to make sure that you have enabled auditing on the Azure SQL Managed Instance to capture all backup and restore activities. Auditing can write to your storage accounts or to Log Analytics workspaces. By writing to Log Analytics workspace, you can create Alerts and notifications to make sure that you get alerted on all the backup and restore activities to\from Unauthorized locations.
 

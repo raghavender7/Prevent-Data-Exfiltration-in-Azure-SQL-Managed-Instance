@@ -4,11 +4,14 @@ Auditing is a very important part of security configuration on any Database serv
 
 ## Step 1: To enable Diagnostic Logging at Azure SQL Managed Instance level.
 
+Enable Diagnostic Settings under the Monitoring category under Azure SQL Managed Instance properties. Make sure you select the **SQLSecurityAuditEvents** under logs. For the Destination details, please click **Send to Log Analytics** and select the right Log analytics workspace where you want to direct your Audit logs. Finally Click Save button
+
 ![image](https://user-images.githubusercontent.com/22504173/75150778-1e05b480-56d3-11ea-8b37-f45cf9375c84.png)
 ![image](https://user-images.githubusercontent.com/22504173/75150785-22ca6880-56d3-11ea-938c-7d4fbf473790.png)
 
 ## Step 2: To configure Auditing at Azure SQL Managed Instance level 
-
+On the SQL MI instance, Log on with the Privileged Admin rights, Enable the SQL MI Instance for Server auditing and select the location as **EXTERNAL_MONITOR** to direct your logs to Log Analytics workspace instead of an Azure storage location which is the default.
+Once you run this code, the next step is to create to Server Audit specification
 ```TSQL
 CREATE SERVER AUDIT BackupRestoreAudit TO EXTERNAL_MONITOR;
 GO

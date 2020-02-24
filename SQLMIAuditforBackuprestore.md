@@ -17,6 +17,7 @@ CREATE SERVER AUDIT BackupRestoreAudit TO EXTERNAL_MONITOR;
 GO
 ```
 ## Step 3: To create the Server Audit specification
+Create a server audit specification to capture all the Backup and restore activity on the SQL instance and anything to do with the existing audit as well. In this way, no one can tamper with the audit before they backup or restore databases.
 
 ```TSQL
 CREATE SERVER AUDIT SPECIFICATION BackupRestoreAuditSpec
@@ -27,11 +28,13 @@ WITH (STATE=ON);
 ```
 ## Step 4: To enable to auditing feature
 
+Enable the server audit created in the earlier step. This is the final step and Auditing has been enabled for your Azure SQL Managed Instance.
 ```TSQL
 ALTER SERVER AUDIT BackupRestoreAudit WITH (STATE=ON);
 GO
 ```
 ## Monitoring the Audit logs
+All the logs show up in the Log Analytics workspace. Click on the **Logs** option under General Category to open the Kusto Query explorer where in you can write your Kusto queries to explore your data and then create alerts accordingly
 
 ![image](https://user-images.githubusercontent.com/22504173/75151353-8012e980-56d4-11ea-92e7-c7ae748caef2.png)
 

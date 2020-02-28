@@ -1,5 +1,5 @@
 # Configure Server Auditing for Azure SQL Managed Instance to capture Linked Server activity
-Auditing is a very important part of security configuration on any Database service and it becomes more critical in a cloud environment. Azure SQL Managed Instance Server audit can be written to Azure Storage or Log analytics workspaces. In this setup we will be showcasing Log analytics workspace so that we can use the native functionality to easily alert and notify teams when any suspcious activities happen related to backups and restores to any unauthorized locations. Here is the direct link to the 
+Auditing is a very important part of security configuration on any Database service and it becomes more critical in a cloud environment. Azure SQL Managed Instance Server audit can be written to Azure Storage or Log analytics workspaces. In this setup we will be showcasing Log analytics workspace so that we can use the native functionality to easily alert and notify teams when any suspcious activities happen related to Linked server execution. Here is the direct link to the 
   [T-SQL script to enable auditing on a SQL Managed Instance](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/SQLAuditingbackuprestoreMI.sql)
 ## Step 1: To enable Diagnostic Logging at Azure SQL Managed Instance level.
 
@@ -16,7 +16,7 @@ CREATE SERVER AUDIT [LinkedServer] TO EXTERNAL_MONITOR;
 GO
 ```
 ## Step 3: To create the Server Audit specification
-Create a server audit specification to capture all the Linked server activity on the SQL instance and anything to do with the existing audit as well. In this way, no one can tamper with the audit before they backup or restore databases.
+Create a server audit specification to capture all the Linked server activity on the SQL instance and anything to do with the existing audit as well. In this way, no one can tamper with the audit before they create a linked server
 
 ```TSQL
 CREATE DATABASE AUDIT SPECIFICATION [LinkedServerMaster]
@@ -51,7 +51,7 @@ AzureDiagnostics | where Category == "SQLSecurityAuditEvents"
 Here are steps to create Alerts based on a Custom log query. You can customize this accordingly to your SLA requirements and create an Action group to notify when certain thresholds are hit
 ```KQL
 AzureDiagnostics
-| where Category == "SQLSecurityAuditEvents" and action_name_s =="BACKUP" and statement_s contains "COPY_ONLY" | count
+| where Category == "SQLSecurityAuditEvents" and action_name_s =="EXECUTE"  and object_name_s =="sp_addlinkedserver" | count
 ```
 ![image](https://user-images.githubusercontent.com/22504173/75151572-016a7c00-56d5-11ea-85d4-5780b35ac0c2.png)
 ![image](https://user-images.githubusercontent.com/22504173/75151622-252dc200-56d5-11ea-8368-6c69997bf73a.png)

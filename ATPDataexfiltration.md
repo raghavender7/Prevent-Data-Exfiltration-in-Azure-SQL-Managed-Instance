@@ -14,4 +14,6 @@ Under the Advanced Threat protection types list, I would recommend enabling all 
 
 
 Finally, Hit the save button to Save these settings.
+
+
 Link: https://docs.microsoft.com/en-us/azure/sql-database/sql-database-advanced-data-security

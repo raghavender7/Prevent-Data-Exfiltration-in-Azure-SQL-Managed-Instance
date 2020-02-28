@@ -37,7 +37,7 @@ Please follow the instructions at this link to enable [Azure policy across your 
 
 * **ATP Threat protection and Vulnerability Assessments for Data Exfiltration:**
 Advanced Data Security option under Azure SQL Managed Instances provides a set of advanced SQL security capabilities, including vulnerability assessment and Advanced Threat Protection. They help in tracking potential database vulnerabilities and also protects from threats from applications and other usage anamolies. Data exfiltration is an option in Threat protection which will alert when any kind of exfiltration anomalies happen on the Managed Instance
-Here is a link which shows how to enable these settings on Azure SQL Managed Instance  [Azure policy across your subscription for Managed Instances](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/azurepolicytdecmk.md)
+Here is a link which shows how to enable these settings on Azure SQL Managed Instance  [Enabling Advanced Threat protection and Vulnerability Assessments on SQL MI](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/ATPDataexfiltration.md)
 
 
 

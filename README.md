@@ -89,6 +89,9 @@ Please follow this link to [Enable Auditing on Azure SQL Managed Instance and ge
 # Reading Data from Audit Logs
 ### Preventive Actions
 * **Locking storage firewall to Managed Instance subnet**
+One of the most important security settings to enable is locking down the network access to the storage account which contains your SQL audit logs. In our case, we are forwarding all the logs to Log Analytics workspace but there could be scenarios where you write the Audit logs to a storage account which you want to retain for long term or compliance purposes. Any access to restricted admins can have the risk of data exfiltration.
+
+Here is a link which shows how to restrict access to a storage account only to SQL managed instance.
 
 ### Controls
 * **Storage Access controls:**

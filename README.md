@@ -47,6 +47,9 @@ Please follow the instructions at this link to enable [Azure policy across your 
    
 ### Controls
 * **Setting Auditing Alerts:**
+You need to make sure that you have enabled auditing on the Azure SQL Managed Instance to capture all linked server activities. Auditing can write to your storage accounts or to Log Analytics workspaces. By writing to Log Analytics workspace, you can create Alerts and notifications to make sure that you get alerted on all the linked server activities.
+
+Please follow this link to [enable Auditing on Azure SQL Managed Instance and get alerted for linked server creation](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/SQLMIauditingforLinkedServer.md)
 
 # Outbound Calls through CLR Integration
 ### Preventive Actions

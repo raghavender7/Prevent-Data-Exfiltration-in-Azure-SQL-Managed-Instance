@@ -60,6 +60,9 @@ Please follow this link to [enable Auditing on Azure SQL Managed Instance and ge
 * **Turn off CLR Integration**
 ### Controls
 * **Setting Auditing Alerts:**
+You need to make sure that you have enabled auditing on the Azure SQL Managed Instance to capture all sp_configure activities. Auditing can write to your storage accounts or to Log Analytics workspaces. By writing to Log Analytics workspace, you can create Alerts and notifications to make sure that you get alerted on all the sp_configure activities happening on the SQL MI instance.
+
+Please follow this link to [Enable Auditing on Azure SQL Managed Instance and get alerted for someone executing sp_configure](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/SPconfigureAuditingSQLMI.md)
 
 # Sending Data through DBMail
 ### Preventive Actions

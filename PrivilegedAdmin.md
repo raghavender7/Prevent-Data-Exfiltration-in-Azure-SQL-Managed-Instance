@@ -11,8 +11,15 @@ In order to enable AAD authentication for managed SQL Instance, you need to Set 
 
 Once you set the admin, then you will be able to add AAD accounts as server logins and then added to the corresponding server role accordingly.
 
+```TSQL
+USE master
+GO
+CREATE LOGIN [abc@microsoft.com] FROM EXTERNAL PROVIDER
+GO
+ALTER SERVER ROLE sysadmin ADD MEMBER [abc@microsoft.com]
+GO
 
-
+```
 
 
 In this way, you can guarantee that all your sysadmins are connecting from Azure AD accounts only. Also you can set Azure AD conditional access on these accounts that they can be accessed only from certain regions or devices etc.

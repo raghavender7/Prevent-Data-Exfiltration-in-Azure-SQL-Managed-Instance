@@ -16,6 +16,8 @@ By default, Azure SQL Database Managed Instance has automatic backups that are s
    [T-SQL Script to create Restricted Admin role](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/Restricted%20Admin.sql)
    
    For your Power users who need sysadmin access, here are some guidelienes
+   [Privileged Admin Link](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/PrivilegedAdmin.md)
+   
    
 * **Use Transparent Data Encryption (TDE):**
 TDE helps protect Azure SQL Managed Instance against the threat of malicious offline activity by encrypting data at rest. It performs real-time encryption and decryption of the database, associated backups, and transaction log files at rest without requiring changes to the application. TDE is either enabled by using Service Managed Keys(where Microsoft manages the Key which is default) or Customer Managed Keys (where you as a customer point to a key in Azure Key vault). 

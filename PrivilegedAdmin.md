@@ -10,6 +10,7 @@ In order to enable AAD authentication for managed SQL Instance, you need to Set 
 
 
 Once you set the admin, then you will be able to add AAD accounts as server logins and then added to the corresponding server role accordingly.
+ [T-SQL Script to create AAD server logins and granting sysadmin](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/PrivilegedAdmin.sql)
 
 ```TSQL
 USE master

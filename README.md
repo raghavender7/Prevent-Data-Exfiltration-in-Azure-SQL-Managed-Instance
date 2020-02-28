@@ -71,6 +71,8 @@ Please follow this link to [Enable Auditing on Azure SQL Managed Instance and ge
    [T-SQL Script to create Restricted Admin role](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/Restricted%20Admin.sql)
  * **Turn off DBMail**
  Always make sure that you are disabling DBMail unless you really need it. Please follow this link on the instructions on how to disable DBMail. 
+  [Disable DB Mail on Azure SQL managed instance](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/DisableDBMail.md)
+ 
  
 ### Controls
 * **Setting Auditing Alerts:**

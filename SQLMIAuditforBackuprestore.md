@@ -57,12 +57,12 @@ AzureDiagnostics
 
 ![image](https://user-images.githubusercontent.com/22504173/75595375-1854f980-5a5a-11ea-9c1a-efaf5b398395.png)
 
-Finally, provide an Alert name and Create the Alert rule
+## Finally, provide an Alert name and Create the Alert rule
 ![image](https://user-images.githubusercontent.com/22504173/75595381-1ee37100-5a5a-11ea-8639-0871d1d7dd78.png)
 
 ## Test the Alert
 
-Take a SQL COPY_ONLY backup on the instance
+Take a SQL COPY_ONLY backup on the Azure SQL Managed instance
 
 ```TSQL
 BACKUP DATABASE master
@@ -71,6 +71,6 @@ WITH COPY_ONLY
 
 ```
 
-After sometime, you will get an email or text message with all the information.
+## After sometime, you will get an email or text message with  the information as an Alert.
 ![image](https://user-images.githubusercontent.com/22504173/75595388-2440bb80-5a5a-11ea-9dfb-c72f065d0dc0.png)
 

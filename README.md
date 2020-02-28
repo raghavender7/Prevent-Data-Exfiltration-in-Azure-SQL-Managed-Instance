@@ -16,7 +16,7 @@ By default, Azure SQL Database Managed Instance has automatic backups that are s
    [T-SQL Script to create Restricted Admin role](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/Restricted%20Admin.sql)
    
    For your Power users who need sysadmin access, here are some guidelienes
-   [Privileged Admin Link](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/PrivilegedAdmin.md)
+   [Privileged Admin Role](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/PrivilegedAdmin.md)
    
    
 * **Use Transparent Data Encryption (TDE):**

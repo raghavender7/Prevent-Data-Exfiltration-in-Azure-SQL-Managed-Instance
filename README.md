@@ -58,6 +58,9 @@ Please follow this link to [enable Auditing on Azure SQL Managed Instance and ge
    [T-SQL Script to create Restricted Admin role](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/Restricted%20Admin.sql)
    
 * **Turn off CLR Integration**
+ Always make sure that you are disabling CLR on Azure SQL Managed Instance unless you really need it for a very specific purpose. Please follow this link on the instructions on how to disable DBMail. 
+  [Disable CLR on Azure SQL managed instance](https://github.com/raghavender7/Prevent-Data-Exfiltration-in-Azure-SQL-Managed-Instance/blob/master/SQLMIDisableclr.md)
+  
 ### Controls
 * **Setting Auditing Alerts:**
 You need to make sure that you have enabled auditing on the Azure SQL Managed Instance to capture all sp_configure activities. Auditing can write to your storage accounts or to Log Analytics workspaces. By writing to Log Analytics workspace, you can create Alerts and notifications to make sure that you get alerted on all the sp_configure activities happening on the SQL MI instance.

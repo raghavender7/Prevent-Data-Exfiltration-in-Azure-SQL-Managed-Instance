@@ -28,15 +28,14 @@ WITH (STATE=ON);
 ```
 ## Step 4: To enable the server audit
 
-Enable the server audit created in the earlier step. This is the final step and Auditing has been enabled for your Azure SQL Managed Instance.
+Enable the server audit created in the earlier step. This is the final step and Auditing has been enabled for your Azure SQL Managed Instance. These logs will be pushed into Log analytics
 ```TSQL
 ALTER SERVER AUDIT BackupRestoreAudit WITH (STATE=ON);
 GO
 ```
 ## Monitoring the Audit logs
 All the logs show up in the Log Analytics workspace. Click on the **Logs** option under General Category to open the Kusto Query explorer where in you can write your Kusto queries to explore your data and then create alerts accordingly
-
-![image](https://user-images.githubusercontent.com/22504173/75151353-8012e980-56d4-11ea-92e7-c7ae748caef2.png)
+![image](https://user-images.githubusercontent.com/22504173/75595370-0d01ce00-5a5a-11ea-827d-e89075d7e99c.png)
 
 This query will show all the logs captured by SQL Auditing option which we have enabled on the Azure SQL Managed instance in the earlier steps
 ```KQL
@@ -44,10 +43,34 @@ AzureDiagnostics | where Category == "SQLSecurityAuditEvents"
 ```
 ## Create Alerts to notify on any suspicious activities
 Here are steps to create Alerts based on a Custom log query. You can customize this accordingly to your SLA requirements and create an Action group to notify when certain thresholds are hit
+Click the  + New Alert button to create a new alert using this custom query
+Specify the condition which contains the above query and other values like Alert logic, Frequency and Period
+
 ```KQL
 AzureDiagnostics
-| where Category == "SQLSecurityAuditEvents" and action_name_s =="BACKUP" and statement_s contains "COPY_ONLY" | count
+| where Category == "SQLSecurityAuditEvents" and action_name_s =="BACKUP" and statement_s contains "COPY_ONLY"
 ```
-![image](https://user-images.githubusercontent.com/22504173/75151572-016a7c00-56d5-11ea-85d4-5780b35ac0c2.png)
-![image](https://user-images.githubusercontent.com/22504173/75151622-252dc200-56d5-11ea-8368-6c69997bf73a.png)
+
+![image](https://user-images.githubusercontent.com/22504173/75595372-12f7af00-5a5a-11ea-9372-0153c43ba8c7.png)
+
+## Create an action group to get notified on the alert. This could be an email, SMS, Webhook or Logic apps etc.
+
+![image](https://user-images.githubusercontent.com/22504173/75595375-1854f980-5a5a-11ea-9c1a-efaf5b398395.png)
+
+Finally, provide an Alert name and Create the Alert rule
+![image](https://user-images.githubusercontent.com/22504173/75595381-1ee37100-5a5a-11ea-8639-0871d1d7dd78.png)
+
+## Test the Alert
+
+Take a SQL COPY_ONLY backup on the instance
+
+```TSQL
+BACKUP DATABASE master
+TO URL = N'https://srgostorv2.blob.core.windows.net/sqlauditlogs/master_231.bak'
+WITH COPY_ONLY
+
+```
+
+After sometime, you will get an email or text message with all the information.
+![image](https://user-images.githubusercontent.com/22504173/75595388-2440bb80-5a5a-11ea-9dfb-c72f065d0dc0.png)
 

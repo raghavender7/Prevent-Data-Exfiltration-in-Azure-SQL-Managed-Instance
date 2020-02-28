@@ -53,5 +53,6 @@ Here are steps to create Alerts based on a Custom log query. You can customize t
 AzureDiagnostics
 | where Category == "SQLSecurityAuditEvents" and action_name_s =="EXECUTE"  and object_name_s =="sp_addlinkedserver" | count
 ```
+
 ![image](https://user-images.githubusercontent.com/22504173/75151572-016a7c00-56d5-11ea-85d4-5780b35ac0c2.png)
 

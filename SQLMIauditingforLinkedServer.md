@@ -54,5 +54,25 @@ AzureDiagnostics
 | where Category == "SQLSecurityAuditEvents" and action_name_s =="EXECUTE"  and object_name_s =="sp_addlinkedserver" | count
 ```
 
-![image](https://user-images.githubusercontent.com/22504173/75151572-016a7c00-56d5-11ea-85d4-5780b35ac0c2.png)
+![image](https://user-images.githubusercontent.com/22504173/75916508-7a30ad00-5e26-11ea-95b6-6417db26ef03.png)
 
+![image](https://user-images.githubusercontent.com/22504173/75916520-7f8df780-5e26-11ea-8fff-5f96bafacd4e.png)
+## Create an action group to get notified on the alert. This could be an email, SMS, Webhook or Logic apps etc.
+
+![image](https://user-images.githubusercontent.com/22504173/75916533-83ba1500-5e26-11ea-922b-702499f80116.png)
+
+## Finally, provide an Alert name and Create the Alert rule
+
+![image](https://user-images.githubusercontent.com/22504173/75916685-c8de4700-5e26-11ea-8e9c-f576d96f464c.png)
+
+## Test the Alert
+
+Run the following script to enable "clr enabled" or "Database Mail XPs" on the Azure SQL Managed instance
+
+```TSQL
+sp_addlinkedserver'test'
+
+```
+
+## After sometime, you will get an email or text message with  the information as an Alert.
+![image](https://user-images.githubusercontent.com/22504173/75595388-2440bb80-5a5a-11ea-9dfb-c72f065d0dc0.png)

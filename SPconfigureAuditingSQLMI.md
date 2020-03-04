@@ -38,7 +38,7 @@ GO
 ```
 ## Monitoring the Audit logs
 All the logs show up in the Log Analytics workspace. Click on the **Logs** option under General Category to open the Kusto Query explorer where in you can write your Kusto queries to explore your data and then create alerts accordingly
-![image](https://user-images.githubusercontent.com/22504173/75595370-0d01ce00-5a5a-11ea-827d-e89075d7e99c.png)
+![image](https://user-images.githubusercontent.com/22504173/75915701-fe823080-5e24-11ea-84db-023775bcb320.png)
 
 This query will show all the logs captured by SQL Auditing option which we have enabled on the Azure SQL Managed instance in the earlier steps
 ```KQL

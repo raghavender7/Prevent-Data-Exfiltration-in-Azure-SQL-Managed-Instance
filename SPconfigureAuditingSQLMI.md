@@ -18,7 +18,7 @@ WHERE (object_name = 'sp_configure');
 GO
 ```
 ## Step 3: To create the Server Audit specification
-Create a server audit specification to capture all the sp_configure activity for enabling CLR on the SQL instance and anything to do with the existing audit as well. In this way, no one can tamper with the audit before they enable CLR on the instance
+Create a server audit specification to capture all the **sp_configure** activity for enabling CLR on the SQL instance and anything to do with the existing audit as well. In this way, no one can tamper with the audit before they enable CLR on the instance
 
 ```TSQL
 CREATE SERVER AUDIT SPECIFICATION Audit_sp_configure_sp

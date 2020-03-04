@@ -22,8 +22,8 @@ GO
 Create a server audit specification to capture all the sp_configure activity on the SQL instance and anything to do with the existing audit as well
 
 ```TSQL
-CREATE SERVER AUDIT SPECIFICATION [Audit_sp_configure_sp]
-FOR SERVER AUDIT [[Audit_sp_configure]]
+CREATE SERVER AUDIT SPECIFICATION Audit_sp_configure_sp
+FOR SERVER AUDIT Audit_sp_configure
 ADD (SCHEMA_OBJECT_ACCESS_GROUP)
 WITH (STATE = ON)
 GO

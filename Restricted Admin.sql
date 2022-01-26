@@ -1,6 +1,7 @@
 USE [master]
 GO
 
+
 -- Create a server role for Restricted Admin
 CREATE SERVER ROLE [RestrictedAdmin]
 GO
